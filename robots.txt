@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://orianacuello.vercel.app/sitemap.xml
+Sitemap: https://oriana-cuello.vercel.app/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
