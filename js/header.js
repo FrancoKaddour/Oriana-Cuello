@@ -27,6 +27,7 @@ class Header {
     this.navImages = document.querySelectorAll('.nav-image');
     this.navLinks = document.querySelectorAll('.nav__link, .bottom-nav__link, .footer__link');
     this.isMenuOpen = false;
+    this.scrollPosition = 0;
 
     this.init();
   }
@@ -98,8 +99,12 @@ class Header {
     const label = this.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
     this.menuToggle.setAttribute('aria-label', label);
 
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+    // Prevent scroll with multiple methods
+    if (this.isMenuOpen) {
+      this.disableScroll();
+    } else {
+      this.enableScroll();
+    }
   }
 
   closeMenu() {
@@ -109,7 +114,37 @@ class Header {
     this.header.classList.remove('menu-open');
     this.menuToggle.setAttribute('aria-expanded', 'false');
     this.menuToggle.setAttribute('aria-label', 'Abrir menú');
+    this.enableScroll();
+  }
+
+  disableScroll() {
+    // Save current scroll position
+    this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Add classes to prevent scroll
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
+
+    // Set body position to current scroll position
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${this.scrollPosition}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  enableScroll() {
+    // Remove classes
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
+
+    // Reset body styles
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
     document.body.style.overflow = '';
+
+    // Restore scroll position
+    window.scrollTo(0, this.scrollPosition);
   }
 
   handleImageSwitching() {
