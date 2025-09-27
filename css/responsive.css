@@ -295,13 +295,13 @@
   }
 
   .polaroid--1 {
-    left: 65%;
-    bottom: 40%;
+    left: 75%;
+    bottom: 50%;
   }
 
   .polaroid--2 {
-    right: 2%;
-    bottom: 15%;
+    left: 56%;
+    bottom: 43%;
   }
 
   /* Portfolio */
@@ -359,13 +359,77 @@
 
   /* Polaroids */
   .polaroid--1 {
-    left: 77%;
-    bottom: 45%;
+    left: 80%;
+    bottom: 46%;
   }
 
   .polaroid--2 {
-    left: 59%;
-    bottom: 38%;
+    left: 62%;
+    bottom: 39%;
+  }
+}
+
+/* ==========================================================================
+   Large Desktop (1800px and up)
+   ========================================================================== */
+
+@media (min-width: 1800px) {
+  /* Hero */
+  .hero__title {
+    font-size: clamp(7.5rem, 12vw, 14rem);
+    line-height: 0.78;
+  }
+
+  /* Polaroids */
+  .polaroid {
+    width: calc(var(--polaroid-width) * 1.3);
+    height: calc(var(--polaroid-height) * 1.3);
+  }
+
+  .polaroid__image-container {
+    height: calc(var(--polaroid-image-height) * 1.3);
+  }
+
+  .polaroid--1 {
+    left: 82%;
+    bottom: 48%;
+  }
+
+  .polaroid--2 {
+    left: 64%;
+    bottom: 40%;
+  }
+}
+
+/* ==========================================================================
+   Ultra Wide Desktop (2000px and up)
+   ========================================================================== */
+
+@media (min-width: 2000px) {
+  /* Hero */
+  .hero__title {
+    font-size: clamp(7.8rem, 12vw, 14.5rem);
+    line-height: 0.76;
+  }
+
+  /* Polaroids */
+  .polaroid {
+    width: calc(var(--polaroid-width) * 1.35);
+    height: calc(var(--polaroid-height) * 1.35);
+  }
+
+  .polaroid__image-container {
+    height: calc(var(--polaroid-image-height) * 1.35);
+  }
+
+  .polaroid--1 {
+    left: 83%;
+    bottom: 49%;
+  }
+
+  .polaroid--2 {
+    left: 65%;
+    bottom: 41%;
   }
 }
 
