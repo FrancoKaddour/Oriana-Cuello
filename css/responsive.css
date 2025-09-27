@@ -427,12 +427,12 @@
 
   /* Polaroids */
   .polaroid {
-    width: calc(var(--polaroid-width) * 1.15);
-    height: calc(var(--polaroid-height) * 1.15);
+    width: calc(var(--polaroid-width) * 1.1);
+    height: calc(var(--polaroid-height) * 1.1);
   }
 
   .polaroid__image-container {
-    height: calc(var(--polaroid-image-height) * 1.15);
+    height: calc(var(--polaroid-image-height) * 1.1);
   }
 
   .polaroid--1 {
