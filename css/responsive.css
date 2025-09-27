@@ -315,15 +315,48 @@
 }
 
 /* ==========================================================================
-   Small Notebooks & Tablets Landscape (1024px - 1279px)
+   Small Notebooks (1024px - 1279px) with limited height
    ========================================================================== */
 
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1279px) and (max-height: 900px) {
+  /* Hero */
+  .hero__title {
+    font-size: clamp(4rem, 9vw, 7rem);
+    line-height: 0.9;
+    margin-top: 2rem;
+  }
+
+  /* Polaroids */
+  .polaroid {
+    width: calc(var(--polaroid-width) * 1.0);
+    height: calc(var(--polaroid-height) * 1.0);
+  }
+
+  .polaroid__image-container {
+    height: calc(var(--polaroid-image-height) * 1.0);
+  }
+
+  .polaroid--1 {
+    left: 58%;
+    bottom: 30%;
+  }
+
+  .polaroid--2 {
+    left: 42%;
+    bottom: 20%;
+  }
+}
+
+/* ==========================================================================
+   iPad Pro Landscape & Tall Tablets (1024px - 1279px) with more height
+   ========================================================================== */
+
+@media (min-width: 1024px) and (max-width: 1279px) and (min-height: 900px) {
   /* Hero */
   .hero__title {
     font-size: clamp(4.5rem, 10vw, 8rem);
     line-height: 0.9;
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   /* Polaroids */
@@ -337,13 +370,13 @@
   }
 
   .polaroid--1 {
-    left: 60%;
-    bottom: 35%;
+    left: 62%;
+    bottom: 40%;
   }
 
   .polaroid--2 {
-    left: 45%;
-    bottom: 25%;
+    left: 47%;
+    bottom: 30%;
   }
 }
 
