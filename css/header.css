@@ -173,7 +173,7 @@ body.no-scroll {
 }
 
 /* Desktop Layout - Images left, Menu right */
-@media (min-width: 1024px) {
+@media (min-width: 1367px) {
   .nav-content {
     flex-direction: row;
   }
@@ -196,7 +196,7 @@ body.no-scroll {
 }
 
 /* Mobile/Tablet Layout - Menu top, Images bottom */
-@media (max-width: 1023px) {
+@media (max-width: 1366px) {
   .nav-content {
     flex-direction: column;
   }
