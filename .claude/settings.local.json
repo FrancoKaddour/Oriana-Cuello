@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git remote set-url:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"Add comprehensive README with mobile-first responsive design documentation\")"
+      "Bash(git commit -m \"Add comprehensive README with mobile-first responsive design documentation\")",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []
