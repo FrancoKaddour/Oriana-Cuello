@@ -354,19 +354,19 @@
 @media (min-width: 1024px) and (max-width: 1024px) and (min-height: 1300px) {
   /* Hero */
   .hero__title {
-    font-size: clamp(4rem, 9vw, 7rem);
+    font-size: clamp(4rem, 14vw, 11rem);
     line-height: 0.9;
     margin-top: 2rem;
   }
 
-  /* Polaroids - same as original mobile but positioned */
+  /* Polaroids - much larger for iPad Pro Portrait */
   .polaroid {
-    width: var(--polaroid-width);
-    height: var(--polaroid-height);
+    width: calc(var(--polaroid-width) * 1.8);
+    height: calc(var(--polaroid-height) * 1.8);
   }
 
   .polaroid__image-container {
-    height: var(--polaroid-image-height);
+    height: calc(var(--polaroid-image-height) * 1.8);
   }
 
   .polaroid--1 {
