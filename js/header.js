@@ -91,6 +91,9 @@ class Header {
     // Toggle overlay
     this.navOverlay.classList.toggle('active');
 
+    // Toggle header state for logo hiding
+    this.header.classList.toggle('menu-open');
+
     // Update aria-label for accessibility
     const label = this.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
     this.menuToggle.setAttribute('aria-label', label);
@@ -103,6 +106,7 @@ class Header {
     this.isMenuOpen = false;
     this.menuToggle.classList.remove('active');
     this.navOverlay.classList.remove('active');
+    this.header.classList.remove('menu-open');
     this.menuToggle.setAttribute('aria-expanded', 'false');
     this.menuToggle.setAttribute('aria-label', 'Abrir menú');
     document.body.style.overflow = '';

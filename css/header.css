@@ -56,6 +56,7 @@
 .logo {
   display: block;
   text-align: left;
+  transition: opacity 0.3s ease;
 }
 
 .logo__text {
@@ -70,6 +71,12 @@
 .logo__text-oriana,
 .logo__text-cuello {
   display: inline-block;
+}
+
+/* Hide logo when menu is active */
+.header.menu-open .logo {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Menu Toggle */
@@ -117,6 +124,7 @@
 /* Perfect X Animation */
 .menu-toggle.active .menu-toggle__line:first-child {
   transform: translateY(6px) rotate(45deg);
+  background: var(--color-secondary);
 }
 
 .menu-toggle.active .menu-toggle__line:nth-child(2) {
@@ -126,6 +134,7 @@
 
 .menu-toggle.active .menu-toggle__line:last-child {
   transform: translateY(-6px) rotate(-45deg);
+  background: var(--color-secondary);
 }
 
 /* Navigation Overlay */
@@ -250,6 +259,12 @@
 }
 
 .nav-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* First image visible by default when overlay opens */
+.nav-overlay.active .nav-image:first-child {
   opacity: 1;
   transform: scale(1);
 }
