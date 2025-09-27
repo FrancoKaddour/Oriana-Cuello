@@ -420,29 +420,29 @@
 @media (min-width: 1366px) and (max-width: 1439px) {
   /* Hero */
   .hero__title {
-    font-size: clamp(5.5rem, 11vw, 10rem);
+    font-size: clamp(5.5rem, 16vw, 12rem);
     line-height: 0.88;
     margin-top: 4rem;
   }
 
-  /* Polaroids */
+  /* Polaroids - smaller than before */
   .polaroid {
-    width: calc(var(--polaroid-width) * 1.15);
-    height: calc(var(--polaroid-height) * 1.15);
+    width: calc(var(--polaroid-width) * 1.05);
+    height: calc(var(--polaroid-height) * 1.05);
   }
 
   .polaroid__image-container {
-    height: calc(var(--polaroid-image-height) * 1.15);
+    height: calc(var(--polaroid-image-height) * 1.05);
   }
 
   .polaroid--1 {
-    left: 68%;
-    bottom: 40%;
+    left: 75%;
+    bottom: 63%;
   }
 
   .polaroid--2 {
-    left: 52%;
-    bottom: 30%;
+    left: 56%;
+    bottom: 56%;
   }
 }
 
