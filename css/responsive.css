@@ -295,12 +295,12 @@
   }
 
   .polaroid--1 {
-    left: 65%;
+    right: 25%;
     bottom: 40%;
   }
 
   .polaroid--2 {
-    right: 2%;
+    right: 0%;
     bottom: 15%;
   }
 
@@ -327,12 +327,12 @@
 
   /* Polaroids */
   .polaroid--1 {
-    left: 70%;
+    right: 20%;
     bottom: 45%;
   }
 
   .polaroid--2 {
-    right: 1%;
+    right: 0%;
     bottom: 20%;
   }
 }
