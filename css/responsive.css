@@ -323,7 +323,7 @@
   .hero__title {
     font-size: clamp(6.5rem, 12vw, 12.5rem);
     line-height: 0.82;
-    margin-top: 5rem;
+    margin-top: 10rem;
   }
 
   /* Polaroids */
