@@ -85,6 +85,8 @@ body.menu-open {
   position: fixed !important;
   width: 100% !important;
   height: 100% !important;
+  touch-action: none !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 /* For mobile devices - additional scroll prevention */
@@ -93,6 +95,18 @@ html.menu-open {
   position: fixed !important;
   width: 100% !important;
   height: 100% !important;
+  touch-action: none !important;
+}
+
+/* Prevent any scrollable content when menu is open */
+body.menu-open * {
+  overflow: visible !important;
+}
+
+/* Ensure nav overlay allows internal scrolling if needed */
+body.menu-open .nav-overlay {
+  overflow: auto !important;
+  touch-action: auto !important;
 }
 
 /* Menu Toggle */
