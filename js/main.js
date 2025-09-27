@@ -73,6 +73,9 @@ class Header {
   constructor() {
     this.header = document.getElementById('header');
     this.menuToggle = document.querySelector('.menu-toggle');
+    this.navOverlay = document.getElementById('navOverlay');
+    this.navItems = document.querySelectorAll('.nav-item');
+    this.navImages = document.querySelectorAll('.nav-image');
     this.navLinks = document.querySelectorAll('.nav__link, .bottom-nav__link, .footer__link');
     this.isMenuOpen = false;
 
@@ -84,6 +87,7 @@ class Header {
 
     this.handleScroll();
     this.handleMenuToggle();
+    this.handleImageSwitching();
     this.handleSmoothScroll();
     this.handleKeyboardNavigation();
   }
@@ -103,18 +107,18 @@ class Header {
   }
 
   handleMenuToggle() {
-    if (!this.menuToggle) return;
+    if (!this.menuToggle || !this.navOverlay) return;
 
     this.menuToggle.addEventListener('click', (e) => {
       e.preventDefault();
       this.toggleMenu();
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (this.isMenuOpen && !this.menuToggle.contains(e.target)) {
+    // Close menu when clicking on nav items
+    this.navItems.forEach(item => {
+      item.addEventListener('click', () => {
         this.closeMenu();
-      }
+      });
     });
 
     // Close menu on escape key
@@ -125,21 +129,59 @@ class Header {
     });
   }
 
+  handleImageSwitching() {
+    this.navItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const category = item.dataset.category;
+        this.switchImage(category);
+      });
+    });
+  }
+
+  switchImage(category) {
+    // Hide all images
+    this.navImages.forEach(img => {
+      img.classList.remove('active');
+    });
+
+    // Show the image for the hovered category
+    const targetImage = document.querySelector(`[data-category="${category}"].nav-image`);
+    if (targetImage) {
+      setTimeout(() => {
+        targetImage.classList.add('active');
+      }, 100);
+    }
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    // Toggle menu button state
     this.menuToggle.classList.toggle('active');
     this.menuToggle.setAttribute('aria-expanded', this.isMenuOpen);
+
+    // Toggle overlay
+    this.navOverlay.classList.toggle('active');
 
     // Update aria-label for accessibility
     const label = this.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
     this.menuToggle.setAttribute('aria-label', label);
+
+    // Prevent body scroll when menu is open
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   closeMenu() {
     this.isMenuOpen = false;
     this.menuToggle.classList.remove('active');
+    this.navOverlay.classList.remove('active');
     this.menuToggle.setAttribute('aria-expanded', 'false');
     this.menuToggle.setAttribute('aria-label', 'Abrir menú');
+    document.body.style.overflow = '';
   }
 
   handleSmoothScroll() {
