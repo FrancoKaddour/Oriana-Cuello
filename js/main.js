@@ -65,129 +65,6 @@ function isInViewport(element) {
   );
 }
 
-// ==========================================================================
-// Header Functionality
-// ==========================================================================
-
-class Header {
-  constructor() {
-    this.header = document.getElementById('header');
-    this.menuToggle = document.querySelector('.menu-toggle');
-    this.navLinks = document.querySelectorAll('.nav__link, .bottom-nav__link, .footer__link');
-    this.isMenuOpen = false;
-
-    this.init();
-  }
-
-  init() {
-    if (!this.header) return;
-
-    this.handleScroll();
-    this.handleMenuToggle();
-    this.handleSmoothScroll();
-    this.handleKeyboardNavigation();
-  }
-
-  handleScroll() {
-    const scrollHandler = throttle(() => {
-      const scrollY = window.scrollY;
-
-      if (scrollY > CONFIG.SCROLL_THRESHOLD) {
-        this.header.classList.add('scrolled');
-      } else {
-        this.header.classList.remove('scrolled');
-      }
-    }, 16); // ~60fps
-
-    window.addEventListener('scroll', scrollHandler, { passive: true });
-  }
-
-  handleMenuToggle() {
-    if (!this.menuToggle) return;
-
-    this.menuToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.toggleMenu();
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (this.isMenuOpen && !this.menuToggle.contains(e.target)) {
-        this.closeMenu();
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isMenuOpen) {
-        this.closeMenu();
-      }
-    });
-  }
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-    this.menuToggle.classList.toggle('active');
-    this.menuToggle.setAttribute('aria-expanded', this.isMenuOpen);
-
-    // Update aria-label for accessibility
-    const label = this.isMenuOpen ? 'Cerrar menú' : 'Abrir menú';
-    this.menuToggle.setAttribute('aria-label', label);
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
-    this.menuToggle.classList.remove('active');
-    this.menuToggle.setAttribute('aria-expanded', 'false');
-    this.menuToggle.setAttribute('aria-label', 'Abrir menú');
-  }
-
-  handleSmoothScroll() {
-    this.navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-
-        // Only handle internal links
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-
-          const targetId = href.substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            const headerHeight = this.header.offsetHeight;
-            const targetPosition = targetElement.offsetTop - headerHeight;
-
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-
-            // Close mobile menu if open
-            if (this.isMenuOpen) {
-              this.closeMenu();
-            }
-
-            // Update URL without triggering scroll
-            history.pushState(null, null, href);
-          }
-        }
-      });
-    });
-  }
-
-  handleKeyboardNavigation() {
-    // Ensure proper tab order and keyboard accessibility
-    this.navLinks.forEach(link => {
-      link.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          link.click();
-        }
-      });
-    });
-  }
-}
 
 // ==========================================================================
 // Scroll Animations
@@ -698,8 +575,7 @@ class App {
 
   initializeComponents() {
     try {
-      // Initialize all components
-      this.components.push(new Header());
+      // Initialize all components (Header is now initialized in separate file)
       this.components.push(new ScrollAnimations());
       this.components.push(new Portfolio());
       this.components.push(new FooterAnimations());
