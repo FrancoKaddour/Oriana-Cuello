@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main page -->
+  <url>
+    <loc>https://orianacuello.vercel.app/</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Images for better SEO -->
+    <image:image>
+      <image:loc>https://orianacuello.vercel.app/images/og-image.jpg</image:loc>
+      <image:title>Oriana Cuello - Fotógrafa Profesional</image:title>
+      <image:caption>Portfolio de fotografía profesional especializada en casamientos, eventos y retratos</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://orianacuello.vercel.app/images/oriana-profile.jpg</image:loc>
+      <image:title>Oriana Cuello - Fotógrafa</image:title>
+      <image:caption>Retrato profesional de Oriana Cuello, fotógrafa especializada en Buenos Aires</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Portfolio section -->
+  <url>
+    <loc>https://orianacuello.vercel.app/#portfolio</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About section -->
+  <url>
+    <loc>https://orianacuello.vercel.app/#sobre-mi</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services section -->
+  <url>
+    <loc>https://orianacuello.vercel.app/#servicios</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact section -->
+  <url>
+    <loc>https://orianacuello.vercel.app/#contacto</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

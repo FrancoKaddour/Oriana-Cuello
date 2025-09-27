@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://orianacuello.vercel.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow specific paths if needed
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+
+# Allow important assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
