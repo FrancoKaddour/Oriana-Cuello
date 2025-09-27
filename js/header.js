@@ -118,80 +118,11 @@ class Header {
   }
 
   disableScroll() {
-    // Save current scroll position
-    this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Add classes to prevent scroll
-    document.documentElement.classList.add('menu-open');
-    document.body.classList.add('menu-open');
-
-    // Set body position to current scroll position
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${this.scrollPosition}px`;
-    document.body.style.width = '100%';
-    document.body.style.overflow = 'hidden';
-
-    // Prevent scroll events
-    this.preventScrollHandler = this.preventScroll.bind(this);
-    this.preventTouchHandler = this.preventTouch.bind(this);
-    this.preventKeyHandler = this.preventScrollKeys.bind(this);
-
-    // Add event listeners to prevent scroll
-    window.addEventListener('scroll', this.preventScrollHandler, { passive: false });
-    window.addEventListener('wheel', this.preventScrollHandler, { passive: false });
-    window.addEventListener('touchmove', this.preventTouchHandler, { passive: false });
-    window.addEventListener('keydown', this.preventKeyHandler, { passive: false });
-    document.addEventListener('touchmove', this.preventTouchHandler, { passive: false });
+    document.body.classList.add('no-scroll');
   }
 
   enableScroll() {
-    // Remove event listeners
-    if (this.preventScrollHandler) {
-      window.removeEventListener('scroll', this.preventScrollHandler);
-      window.removeEventListener('wheel', this.preventScrollHandler);
-      window.removeEventListener('touchmove', this.preventTouchHandler);
-      window.removeEventListener('keydown', this.preventKeyHandler);
-      document.removeEventListener('touchmove', this.preventTouchHandler);
-    }
-
-    // Remove classes
-    document.documentElement.classList.remove('menu-open');
-    document.body.classList.remove('menu-open');
-
-    // Reset body styles
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.style.overflow = '';
-
-    // Restore scroll position
-    window.scrollTo(0, this.scrollPosition);
-  }
-
-  preventScroll(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }
-
-  preventTouch(e) {
-    // Allow touch events inside the nav overlay
-    if (e.target.closest('.nav-overlay')) {
-      return;
-    }
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }
-
-  preventScrollKeys(e) {
-    // Prevent scroll keys (arrow keys, page up/down, space, home, end)
-    const scrollKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
-    if (scrollKeys.includes(e.keyCode)) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
+    document.body.classList.remove('no-scroll');
   }
 
   handleImageSwitching() {
