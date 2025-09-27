@@ -296,12 +296,12 @@
 
   .polaroid--1 {
     left: 75%;
-    top: 35%;
+    bottom: 50%;
   }
 
   .polaroid--2 {
     left: 56%;
-    top: 42%;
+    bottom: 43%;
   }
 
   /* Portfolio */
@@ -337,12 +337,12 @@
 
   .polaroid--1 {
     left: 72%;
-    top: 43%;
+    bottom: 42%;
   }
 
   .polaroid--2 {
     left: 54%;
-    top: 50%;
+    bottom: 35%;
   }
 }
 
@@ -360,12 +360,12 @@
   /* Polaroids */
   .polaroid--1 {
     left: 80%;
-    top: 39%;
+    bottom: 46%;
   }
 
   .polaroid--2 {
     left: 62%;
-    top: 46%;
+    bottom: 39%;
   }
 }
 
@@ -392,12 +392,12 @@
 
   .polaroid--1 {
     left: 82%;
-    top: 37%;
+    bottom: 48%;
   }
 
   .polaroid--2 {
     left: 64%;
-    top: 45%;
+    bottom: 40%;
   }
 }
 
@@ -424,12 +424,12 @@
 
   .polaroid--1 {
     left: 83%;
-    top: 36%;
+    bottom: 49%;
   }
 
   .polaroid--2 {
     left: 65%;
-    top: 44%;
+    bottom: 41%;
   }
 }
 
@@ -456,12 +456,12 @@
 
   .polaroid--1 {
     left: 80%;
-    top: 35%;
+    bottom: 50%;
   }
 
   .polaroid--2 {
     left: 62%;
-    top: 43%;
+    bottom: 42%;
   }
 }
 

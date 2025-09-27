@@ -188,13 +188,13 @@
 }
 
 .polaroid--1 {
-  top: 55%;
+  bottom: 30%;
   left: 25%;
   transform: rotate(-12deg);
 }
 
 .polaroid--2 {
-  top: 80%;
+  bottom: 5%;
   right: 25%;
   transform: rotate(8deg);
 }
