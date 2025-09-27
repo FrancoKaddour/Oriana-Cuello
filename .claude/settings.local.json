@@ -4,7 +4,9 @@
       "Bash(git remote set-url:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"Add comprehensive README with mobile-first responsive design documentation\")",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
