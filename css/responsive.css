@@ -420,7 +420,7 @@
 @media (min-width: 1180px) and (max-width: 1180px) and (max-height: 820px) {
   /* Hero */
   .hero__title {
-    font-size: clamp(4rem, 13vw, 8rem);
+    font-size: clamp(4rem, 13vw, 7.5rem);
     line-height: 0.9;
     margin-top: 3rem;
   }
