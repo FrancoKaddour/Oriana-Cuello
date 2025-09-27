@@ -295,11 +295,13 @@
   }
 
   .polaroid--1 {
-    left: 40%;
+    left: 50%;
+    bottom: 40%;
   }
 
   .polaroid--2 {
-    right: 15%;
+    right: 8%;
+    bottom: 15%;
   }
 
   /* Portfolio */
@@ -325,11 +327,13 @@
 
   /* Polaroids */
   .polaroid--1 {
-    left: 35%;
+    left: 55%;
+    bottom: 45%;
   }
 
   .polaroid--2 {
-    right: 18%;
+    right: 5%;
+    bottom: 20%;
   }
 }
 
