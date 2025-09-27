@@ -414,6 +414,39 @@
 }
 
 /* ==========================================================================
+   iPad Air Landscape (1180x820)
+   ========================================================================== */
+
+@media (min-width: 1180px) and (max-width: 1180px) and (max-height: 820px) {
+  /* Hero */
+  .hero__title {
+    font-size: clamp(4.5rem, 12vw, 9rem);
+    line-height: 0.9;
+    margin-top: 3rem;
+  }
+
+  /* Polaroids */
+  .polaroid {
+    width: calc(var(--polaroid-width) * 1.2);
+    height: calc(var(--polaroid-height) * 1.2);
+  }
+
+  .polaroid__image-container {
+    height: calc(var(--polaroid-image-height) * 1.2);
+  }
+
+  .polaroid--1 {
+    left: 45%;
+    bottom: 18%;
+  }
+
+  .polaroid--2 {
+    left: 65%;
+    bottom: 12%;
+  }
+}
+
+/* ==========================================================================
    Standard Notebooks (1366px - 1439px)
    ========================================================================== */
 
