@@ -552,8 +552,9 @@
 @media (min-width: 1536px) {
   /* Hero */
   .hero__title {
-    font-size: clamp(7rem, 12vw, 13rem);
-    line-height: 0.8;
+    font-size: clamp(7rem, 11vw, 13rem);
+    line-height: 0.9;
+    margin-top: 5rem;
   }
 
   /* Polaroids */

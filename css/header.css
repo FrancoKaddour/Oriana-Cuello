@@ -98,7 +98,13 @@ body.no-scroll {
   border: none;
   cursor: pointer;
   z-index: 1001;
-  transition: transform var(--transition-fast) var(--ease-in-out);
+  transition: all var(--transition-fast) var(--ease-in-out);
+  border-radius: 50%;
+}
+
+/* Circle background when active */
+.menu-toggle.active {
+  background: var(--color-primary);
 }
 
 .menu-toggle:hover,
